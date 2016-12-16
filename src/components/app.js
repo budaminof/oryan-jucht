@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import Footer from '../components/footer';
+import Nav from '../containers/nav';
 
 export default class App extends Component {
   render() {
     return (
-      <div>React simple starter</div>
+      <main>
+        <Nav />
+        <Footer />
+      </main>
     );
   }
 }
