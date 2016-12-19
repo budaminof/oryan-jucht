@@ -8,7 +8,9 @@ export default class App extends Component {
     return (
       <main>
         <Nav />
-          <About />
+          <div>
+            { this.props.children }
+          </div>
         <Footer />
       </main>
     );
