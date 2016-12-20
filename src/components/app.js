@@ -8,7 +8,7 @@ export default class App extends Component {
     return (
       <main>
         <Nav />
-          <div>
+          <div className="container-fluid">
             { this.props.children }
           </div>
         <Footer />
