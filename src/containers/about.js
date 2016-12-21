@@ -4,10 +4,6 @@ import { getAbout } from '../actions/index';
 
 class About extends Component {
 
-  componentWillMount() {
-    this.props.getAbout();
-  }
-
   render () {
     return (
       <div>

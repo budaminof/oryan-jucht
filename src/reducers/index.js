@@ -6,7 +6,7 @@ import ClassesReducer from './reducer_classes';
 const rootReducer = combineReducers({
   about: AboutReducer,
   puna: PunaReducer,
-  classes: ClassesReducer
+  classes: ClassesReducer,
 });
 
 export default rootReducer;
