@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { getClasses } from '../actions/index';
 
-class Classes extends Component {
-
-  componentWillMount() {
-    this.props.getClasses();
-  }
+export default class Classes extends Component {
 
   render () {
-    
+
     const calendarStyle = {
       style: "border: 0",
       width: "800",
@@ -21,7 +15,7 @@ class Classes extends Component {
     return (
       <div>
         <h2>TIME FOR A CLASS!!!!</h2>
-        <p>{ this.props.text.classes }</p>
+        <p></p>
         <iframe
           src="https://calendar.google.com/calendar/embed?src=budaminof%40gmail.com&ctz=America/Denver"
           style={ calendarStyle }
@@ -31,9 +25,3 @@ class Classes extends Component {
     )
   }
 }
-
-function mapStateToProps(state) {
-  return { text: state.classes };
-}
-
-export default connect( mapStateToProps, { getClasses })(Classes);

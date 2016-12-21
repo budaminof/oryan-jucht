@@ -3,9 +3,9 @@ import { Route, IndexRoute} from 'react-router';
 
 import App from './components/app';
 import Me from './components/me';
-import About from './containers/about';
-import Puna from './containers/puna';
-import Classes from './containers/classes';
+import About from './components/about';
+import Puna from './components/puna';
+import Classes from './components/classes';
 
 export default (
   <Route path="/" component={ App } >

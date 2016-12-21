@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { connect } from 'react-redux';
-import { setLanguage } from '../actions/index';
 
 export default class Nav extends Component {
   render() {
@@ -30,9 +28,3 @@ export default class Nav extends Component {
     );
   };
 }
-
-// function mapStateToProps(state) {
-//   console.log('in NAV',state);
-// }
-
-// export default connect( mapStateToProps, { setLanguage })(Classes);

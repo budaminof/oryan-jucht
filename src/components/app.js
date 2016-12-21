@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Footer from '../components/footer';
-import Nav from '../containers/nav';
-import About from '../containers/about';
+import Nav from '../components/nav';
+import About from '../components/about';
 
 export default class App extends Component {
   render() {
