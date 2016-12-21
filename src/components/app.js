@@ -1,18 +1,38 @@
 import React, { Component } from 'react';
+import { TranslatorProvider } from "react-translate";
+
+import EN from '../i18n/en';
+import HE from '../i18n/he';
 import Footer from '../components/footer';
 import Nav from '../components/nav';
 import About from '../components/about';
 
 export default class App extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      LANG: EN
+    }
+  }
+
+  changeLanguage(lang) {
+    if (lang == 'EN') this.setState({ LANG: EN})
+    else this.setState({ LANG: HE })
+  }
+
   render() {
     return (
-      <main>
-        <Nav />
-          <div className="container-fluid">
-            { this.props.children }
-          </div>
-        <Footer />
-      </main>
+      <TranslatorProvider translations={ this.state.LANG }>
+        <main>
+          <Nav currentLanguage={ this.changeLanguage.bind(this) }/>
+            <div className="container-fluid">
+              { this.props.children }
+            </div>
+          <Footer />
+        </main>
+      </TranslatorProvider>
     );
   }
 }

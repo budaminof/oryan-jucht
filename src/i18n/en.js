@@ -1,5 +1,6 @@
 export default {
-  nav: {
+  locale: 'en',
+  Nav: {
     name: 'Oryan Jucht',
     about: 'About',
     puna: 'Puna',

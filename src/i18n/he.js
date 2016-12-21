@@ -1,5 +1,6 @@
 export default {
-  nav: {
+  locale: 'he',
+  Nav: {
     name: 'אורין יוכט',
     about: 'אודות',
     puna: 'פונה',

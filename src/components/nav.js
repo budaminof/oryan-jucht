@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { translate } from 'react-translate';
 
-export default class Nav extends Component {
+class Nav extends Component {
+
+  onLanguageChange(event) {
+    let lang = event.target.innerHTML;
+    this.props.currentLanguage(lang);
+  }
+
   render() {
+    const { t } = this.props;
+
     return (
       <nav className="navbar navbar-default">
         <div className="container-fluid">
@@ -13,14 +22,24 @@ export default class Nav extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to="/" className="navbar-brand">Oryan Jucht</Link>
+            <Link to="/" className="navbar-brand">{ t("name") }</Link>
           </div>
 
           <div className="collapse navbar-collapse" id="oryan-navbar">
             <ul className="nav navbar-nav">
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/puna">Puna</Link></li>
-              <li><Link to="/classes">Classes</Link></li>
+              <li><Link to="/about">{ t("about") }</Link></li>
+              <li><Link to="/puna">{ t("puna") }</Link></li>
+              <li><Link to="/classes">{ t("classes") }</Link></li>
+              <li>
+                <button onClick={ event => this.onLanguageChange(event) }>
+                  HE
+                </button>
+              </li>
+              <li>
+                <button onClick={ event => this.onLanguageChange(event) }>
+                  EN
+                </button>
+              </li>
             </ul>
           </div>
         </div>
@@ -28,3 +47,5 @@ export default class Nav extends Component {
     );
   };
 }
+
+export default translate("Nav")(Nav);
