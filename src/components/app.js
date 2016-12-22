@@ -27,7 +27,7 @@ export default class App extends Component {
     return (
       <TranslatorProvider translations={ this.state.LANG }>
         <main>
-          <Nav currentLanguage={ this.changeLanguage.bind(this) }/>
+          <Nav changeLanguage={ this.currentLanguage.bind(this) }/>
             <div className="container-fluid">
               { this.props.children }
             </div>
