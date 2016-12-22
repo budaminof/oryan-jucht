@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import { translate } from 'react-translate';
 
-export default class About extends Component {
+class About extends Component {
 
   render () {
+    const { t } = this.props;
+
     return (
       <div>
-        <h2>ABOUT IS RENDERING!!!!</h2>
-        <p></p>
+        <h2>{t('header')}</h2>
+        <p>{t('text')}</p>
       </div>
     )
   }
 }
+
+export default translate('About')(About);

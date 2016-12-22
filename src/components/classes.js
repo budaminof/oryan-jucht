@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { translate } from 'react-translate';
 
-export default class Classes extends Component {
+
+class Classes extends Component {
 
   render () {
+    const { t } = this.props;
 
     const calendarStyle = {
       style: "border: 0",
@@ -14,8 +17,9 @@ export default class Classes extends Component {
 
     return (
       <div>
-        <h2>TIME FOR A CLASS!!!!</h2>
-        <p></p>
+        <h2>{t('header')}</h2>
+        <p>{t('contact')}</p>
+        <p>{t('email')}</p>
         <iframe
           src="https://calendar.google.com/calendar/embed?src=budaminof%40gmail.com&ctz=America/Denver"
           style={ calendarStyle }
@@ -25,3 +29,5 @@ export default class Classes extends Component {
     )
   }
 }
+
+export default translate('Classes')(Classes);
