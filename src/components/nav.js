@@ -3,10 +3,24 @@ import { Link } from 'react-router';
 import { translate } from 'react-translate';
 
 class Nav extends Component {
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      showNav: false
+    }
+  }
 
   onLanguageChange(lang){
     let currentLanguage = lang.nativeEvent.target.innerHTML;
     this.props.changeLanguage(currentLanguage);
+    this.navCollapse(event);
+    return
+  }
+
+  navCollapse() {
+    if (this.state.showNav) this.setState({ showNav: false });
+    else this.setState({ showNav: true })
     return
   }
 
@@ -15,33 +29,35 @@ class Nav extends Component {
 
     return (
       <nav className="navbar navbar-default">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#oryan-navbar" aria-expanded="false">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            <Link to="/" className="navbar-brand">{ t('name') }</Link>
+        <div className="nav-burger" onClick={ event => this.navCollapse(event) }>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <div className={ this.state.showNav ? 'overlay' : 'hidden' } >
+
+          <div className="close-nav" onClick={ event => this.navCollapse(event) }>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
 
-          <div className="collapse navbar-collapse" id="oryan-navbar">
-            <ul className="nav navbar-nav">
-              <li><Link to="/about">{ t('about') }</Link></li>
-              <li><Link to="/puna">{ t('puna') }</Link></li>
-              <li><Link to="/classes">{ t('classes') }</Link></li>
-              <li>
-                <button onClick={event => this.onLanguageChange(event) }>
-                  HE
-                </button>
-              </li>
-              <li>
-                <button onClick={ event => this.onLanguageChange(event) }>
-                  EN
-                </button>
-              </li>
-            </ul>
+          <div className="nav-links">
+            <h3><Link to="/about" onClick={ event => this.navCollapse(event) }>
+              { t('about') }
+            </Link></h3>
+            <h3><Link to="/classes" onClick={ event => this.navCollapse(event) }>
+              { t('classes') }
+            </Link></h3>
+            <div className="languages">
+              <h4 onClick={ event => this.onLanguageChange(event) } >
+                HE
+              </h4>
+              <h4 onClick={ event => this.onLanguageChange(event) } >
+                EN
+              </h4>
+            </div>
           </div>
         </div>
       </nav>

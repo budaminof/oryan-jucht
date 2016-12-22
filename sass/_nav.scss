@@ -1,0 +1,72 @@
+@import "colors";
+
+.navbar, .navbar-default {
+  height: 100px;
+  padding-top: 10px;
+  padding-left: 30px;
+}
+
+.nav-burger {
+  width: 50px;
+  position: absolute;
+  right: 15px;
+  bottom: 25px;
+  transition: all 1s ease;
+
+  div {
+    border-top: 2px black solid;
+    width: 40px;
+    padding-bottom: 10px;
+  }
+}
+
+.overlay {
+  opacity: 1;
+  background-color:#82b37e;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  z-index:1000;
+  padding: 57px 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.nav-links {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  margin-left: 40%;
+
+  h3 {
+    padding: 20px;
+  }
+
+  .languages {
+    padding-top: 80px;
+    h4 {
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+.close-nav {
+  width: 50px;
+  position: absolute;
+  right: 16px;
+  top: 37px;
+  transition: all 1s ease;
+
+  div {
+    border-top: 2px black solid;
+    width: 40px;
+    padding-bottom: 10px;
+  }
+}
