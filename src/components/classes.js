@@ -5,6 +5,8 @@ import { translate } from 'react-translate';
 class Classes extends Component {
 
   render () {
+    let language = this.props.language.locale;
+    console.log("in CLASSES", language);
     const { t } = this.props;
 
     const calendarStyle = {

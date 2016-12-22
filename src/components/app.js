@@ -23,12 +23,14 @@ export default class App extends Component {
   }
 
   render() {
+    const clonedElement = React.cloneElement(this.props.children, { language: this.state.LANG });
+    
     return (
       <TranslatorProvider translations={ this.state.LANG }>
         <main>
           <Nav changeLanguage={ this.currentLanguage.bind(this) }/>
             <div className="container-fluid">
-              { this.props.children }
+              { clonedElement }
             </div>
         </main>
       </TranslatorProvider>

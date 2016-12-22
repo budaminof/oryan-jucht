@@ -4,6 +4,8 @@ import { translate } from 'react-translate';
 class About extends Component {
 
   render () {
+    let language = this.props.language.locale;
+    console.log('in ABOUT', language);
     const { t } = this.props;
 
     return (
