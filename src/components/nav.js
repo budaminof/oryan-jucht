@@ -4,9 +4,10 @@ import { translate } from 'react-translate';
 
 class Nav extends Component {
 
-  onLanguageChange(event) {
-    let lang = event.target.innerHTML;
-    this.props.currentLanguage(lang);
+  onLanguageChange(lang){
+    let currentLanguage = lang.nativeEvent.target.innerHTML;
+    this.props.changeLanguage(currentLanguage);
+    return
   }
 
   render() {
@@ -22,16 +23,16 @@ class Nav extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to="/" className="navbar-brand">{ t("name") }</Link>
+            <Link to="/" className="navbar-brand">{ t('name') }</Link>
           </div>
 
           <div className="collapse navbar-collapse" id="oryan-navbar">
             <ul className="nav navbar-nav">
-              <li><Link to="/about">{ t("about") }</Link></li>
-              <li><Link to="/puna">{ t("puna") }</Link></li>
-              <li><Link to="/classes">{ t("classes") }</Link></li>
+              <li><Link to="/about">{ t('about') }</Link></li>
+              <li><Link to="/puna">{ t('puna') }</Link></li>
+              <li><Link to="/classes">{ t('classes') }</Link></li>
               <li>
-                <button onClick={ event => this.onLanguageChange(event) }>
+                <button onClick={event => this.onLanguageChange(event) }>
                   HE
                 </button>
               </li>

@@ -17,9 +17,10 @@ export default class App extends Component {
     }
   }
 
-  changeLanguage(lang) {
-    if (lang == 'EN') this.setState({ LANG: EN})
-    else this.setState({ LANG: HE })
+  currentLanguage(lang) {
+    if (lang == 'EN') this.setState({ LANG: EN});
+    else this.setState({ LANG: HE });
+    return
   }
 
   render() {

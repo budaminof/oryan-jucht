@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { translate } from 'react-translate';
 
-
 class About extends Component {
 
   render () {
@@ -16,4 +15,4 @@ class About extends Component {
   }
 }
 
-export default translate("About")(About);
+export default translate('About')(About);
