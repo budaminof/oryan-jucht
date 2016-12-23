@@ -1,24 +1,55 @@
 @import "colors";
 
 .navbar, .navbar-default {
+  font-family: 'Oswald', sans-serif;
   height: 100px;
   padding-top: 10px;
   padding-left: 30px;
 }
 
-.nav-burger {
-  width: 50px;
+.full-nav {
   position: absolute;
   right: 15px;
   bottom: 25px;
-  transition: all 1s ease;
+  display: flex;
+  width: 300px;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  padding-right: 50px;
 
-  div {
-    border-top: 2px black solid;
-    width: 40px;
-    padding-bottom: 10px;
+  p {
+    font-weight: 300;
+    cursor: pointer;
+    padding-top: 10px;
   }
 }
+
+.nav-burger {
+  display: hidden;
+}
+
+@media(max-width: 500px) {
+  .full-nav {
+    display: none;
+  }
+
+  .nav-burger {
+    display: block;
+    width: 50px;
+    position: absolute;
+    right: 15px;
+    bottom: 25px;
+    transition: all 1s ease;
+
+    div {
+      border-top: 2px black solid;
+      width: 40px;
+      padding-bottom: 10px;
+    }
+  }
+
+}
+
 
 .overlay {
   opacity: 1;
@@ -53,6 +84,7 @@
     h4 {
       padding: 10px;
       cursor: pointer;
+      font-weight: 300;
     }
   }
 }
@@ -69,4 +101,5 @@
     width: 40px;
     padding-bottom: 10px;
   }
+
 }
