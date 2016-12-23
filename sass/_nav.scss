@@ -2,9 +2,13 @@
 
 .navbar, .navbar-default {
   font-family: 'Oswald', sans-serif;
+  color: $black;
+  background-color: $background !important;
   height: 100px;
   padding-top: 10px;
   padding-left: 30px;
+  margin-bottom: 0px !important;
+  border-radius: 0px !important;
 }
 
 .full-nav {
@@ -42,7 +46,7 @@
     transition: all 1s ease;
 
     div {
-      border-top: 2px black solid;
+      border-top: 2px $black solid;
       width: 40px;
       padding-bottom: 10px;
     }

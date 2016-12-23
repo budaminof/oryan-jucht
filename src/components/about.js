@@ -5,11 +5,10 @@ class About extends Component {
 
   render () {
     let language = this.props.language.locale;
-    console.log('in ABOUT', language);
     const { t } = this.props;
 
     return (
-      <div>
+      <div className={ (language == 'en') ? 'text-left' : 'text-right' }>
         <h2>{t('header')}</h2>
         <p>{t('text')}</p>
       </div>

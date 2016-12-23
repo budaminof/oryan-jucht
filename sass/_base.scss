@@ -1,8 +1,11 @@
-body {
+@import 'colors';
+
+.main {
   font-family: 'Assistant', sans-serif;
+  font-weight: 400;
   }
 
 a, a:focus, a:hover, a:active {
   text-decoration: none !important;
-  color: black !important;
+  color: $black !important;
 }

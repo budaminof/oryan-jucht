@@ -41,7 +41,7 @@ class Nav extends Component {
           <h4><Link to="/classes">
             { t('classes') }
           </Link></h4>
-        </div>
+      </div>
 
         <div className="nav-burger" onClick={ event => this.navCollapse(event) }>
           <div></div>
@@ -50,7 +50,6 @@ class Nav extends Component {
         </div>
 
         <div className={ this.state.showNav ? 'overlay' : 'hidden' } >
-
           <div className="close-nav" onClick={ event => this.navCollapse(event) }>
             <div></div>
             <div></div>

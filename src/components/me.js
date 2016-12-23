@@ -2,8 +2,12 @@ import React from 'react';
 
 const Me = () => {
     return (
-      <article>
-        <h1>Image</h1>
+      <article className="me">
+        <img src="./style/oryan8.jpg"></img>
+        <img src="./style/oryan6.jpg"></img>
+        <img src="./style/oryan2.jpg"></img>
+        <img src="./style/oryan4.jpg"></img>
+        <img src="./style/oryan3.jpg"></img>
       </article>
     );
 }

@@ -1,15 +1,20 @@
-body {
-  font-family: 'Assistant', sans-serif; }
+.main {
+  font-family: 'Assistant', sans-serif;
+  font-weight: 400; }
 
 a, a:focus, a:hover, a:active {
   text-decoration: none !important;
-  color: black !important; }
+  color: #323232 !important; }
 
 .navbar, .navbar-default {
   font-family: 'Oswald', sans-serif;
+  color: #323232;
+  background-color: white !important;
   height: 100px;
   padding-top: 10px;
-  padding-left: 30px; }
+  padding-left: 30px;
+  margin-bottom: 0px !important;
+  border-radius: 0px !important; }
 
 .full-nav {
   position: absolute;
@@ -39,7 +44,7 @@ a, a:focus, a:hover, a:active {
     bottom: 25px;
     transition: all 1s ease; }
     .nav-burger div {
-      border-top: 2px black solid;
+      border-top: 2px #323232 solid;
       width: 40px;
       padding-bottom: 10px; } }
 
@@ -83,3 +88,6 @@ a, a:focus, a:hover, a:active {
     border-top: 2px black solid;
     width: 40px;
     padding-bottom: 10px; }
+
+.me img {
+  width: 100%; }
