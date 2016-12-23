@@ -14,7 +14,6 @@ class Nav extends Component {
   onLanguageChange(lang){
     let currentLanguage = lang.nativeEvent.target.innerHTML;
     this.props.changeLanguage(currentLanguage);
-    this.navCollapse(event);
     return
   }
 
@@ -29,6 +28,21 @@ class Nav extends Component {
 
     return (
       <nav className="navbar navbar-default">
+        <div className="full-nav">
+          <p onClick={ event => this.onLanguageChange(event) } >
+            HE
+          </p>
+          <p onClick={ event => this.onLanguageChange(event) } >
+            EN
+          </p>
+          <h4><Link to="/about">
+            { t('about') }
+          </Link></h4>
+          <h4><Link to="/classes">
+            { t('classes') }
+          </Link></h4>
+        </div>
+
         <div className="nav-burger" onClick={ event => this.navCollapse(event) }>
           <div></div>
           <div></div>
@@ -51,10 +65,16 @@ class Nav extends Component {
               { t('classes') }
             </Link></h3>
             <div className="languages">
-              <h4 onClick={ event => this.onLanguageChange(event) } >
+              <h4 onClick={ event => {
+                  this.onLanguageChange(event);
+                  this.navCollapse(event);
+                } } >
                 HE
               </h4>
-              <h4 onClick={ event => this.onLanguageChange(event) } >
+              <h4 onClick={ event => {
+                  this.onLanguageChange(event);
+                  this.navCollapse(event);
+                } } >
                 EN
               </h4>
             </div>
