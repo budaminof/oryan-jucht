@@ -20,7 +20,8 @@ class Nav extends Component {
   }
 
   handleScroll() {
-    if ($(this).scrollTop() > 1) $('nav').addClass("sticky");
+    console.log(this.window);
+    if ($(this).scrollTop() > 200) $('nav').addClass("sticky");
     else $('nav').removeClass("sticky");
   }
 
@@ -40,59 +41,60 @@ class Nav extends Component {
     const { t } = this.props;
 
     return (
-      <nav className="navbar navbar-default">
-        <div className="full-nav">
-          <p onClick={ event => this.onLanguageChange(event) } >
-            HE
-          </p>
-          <p onClick={ event => this.onLanguageChange(event) } >
-            EN
-          </p>
-          <h4><Link to="/about">
-            { t('about') }
-          </Link></h4>
-          <h4><Link to="/classes">
-            { t('classes') }
-          </Link></h4>
-      </div>
-
-        <div className="nav-burger" onClick={ event => this.navCollapse(event) }>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
-        <div className={ this.state.showNav ? 'overlay' : 'hidden' } >
-          <div className="close-nav" onClick={ event => this.navCollapse(event) }>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-
-          <div className="nav-links">
-            <h3><Link to="/about" onClick={ event => this.navCollapse(event) }>
+      <div>
+        <nav className="navbar navbar-default">
+          <div className="full-nav">
+            <p onClick={ event => this.onLanguageChange(event) } >
+              HE
+            </p>
+            <p onClick={ event => this.onLanguageChange(event) } >
+              EN
+            </p>
+            <h4><Link to="/about">
               { t('about') }
-            </Link></h3>
-            <h3><Link to="/classes" onClick={ event => this.navCollapse(event) }>
+            </Link></h4>
+            <h4><Link to="/classes">
               { t('classes') }
-            </Link></h3>
-            <div className="languages">
-              <h4 onClick={ event => {
-                  this.onLanguageChange(event);
-                  this.navCollapse(event);
-                } } >
-                HE
-              </h4>
-              <h4 onClick={ event => {
-                  this.onLanguageChange(event);
-                  this.navCollapse(event);
-                } } >
-                EN
-              </h4>
-            </div>
+            </Link></h4>
+          </div>
+
+          <div className="nav-burger" onClick={ event => this.navCollapse(event) }>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+      </nav>
+      <div className={ this.state.showNav ? 'overlay' : 'hidden' } >
+        <div className="close-nav" onClick={ event => this.navCollapse(event) }>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <div className="nav-links">
+          <h3><Link to="/about" onClick={ event => this.navCollapse(event) }>
+            { t('about') }
+          </Link></h3>
+          <h3><Link to="/classes" onClick={ event => this.navCollapse(event) }>
+            { t('classes') }
+          </Link></h3>
+          <div className="languages">
+            <h4 onClick={ event => {
+                this.onLanguageChange(event);
+                this.navCollapse(event);
+              } } >
+              HE
+            </h4>
+            <h4 onClick={ event => {
+                this.onLanguageChange(event);
+                this.navCollapse(event);
+              } } >
+              EN
+            </h4>
           </div>
         </div>
-      </nav>
+      </div>
+      </div>
     );
   };
 }

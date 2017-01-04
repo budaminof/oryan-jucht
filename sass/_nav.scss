@@ -18,6 +18,7 @@
 }
 
 .full-nav {
+  transition: all 0.4s ease;
   position: absolute;
   right: 15px;
   bottom: 25px;
@@ -41,8 +42,16 @@
 // playing around with ticky nav
 .sticky {
   opacity: 0.8;
-  color: rgb(20, 107, 15);
+  color: $peacock;
   transition: all 0.4s ease;
+  height: 50px;
+
+    .full-nav {
+      transition: all 0.4s ease;
+      bottom: 5px;
+      a { color: $peacock !important;}
+    }
+
 }
 
 // change nav to burger time
@@ -70,9 +79,20 @@
     }
   }
 
+  .sticky {
+    color: $black;
+
+    .nav-burger {
+      div {
+        border-color: $peacock;
+      }
+    }
+  }
 }
 
 .overlay {
+  font-family: 'Oswald', sans-serif;
+  color: $black;
   opacity: 1;
   background-color:#82b37e;
   position:fixed;

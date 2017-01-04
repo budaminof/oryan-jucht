@@ -29,6 +29,7 @@ article {
   transition: all 0.4s ease; }
 
 .full-nav {
+  transition: all 0.4s ease;
   position: absolute;
   right: 15px;
   bottom: 25px;
@@ -47,8 +48,14 @@ article {
 
 .sticky {
   opacity: 0.8;
-  color: #146b0f;
-  transition: all 0.4s ease; }
+  color: #aa5045;
+  transition: all 0.4s ease;
+  height: 50px; }
+  .sticky .full-nav {
+    transition: all 0.4s ease;
+    bottom: 5px; }
+    .sticky .full-nav a {
+      color: #aa5045 !important; }
 
 @media (max-width: 500px) {
   .full-nav {
@@ -65,9 +72,15 @@ article {
     .nav-burger div {
       border-top: 2px #323232 solid;
       width: 40px;
-      padding-bottom: 10px; } }
+      padding-bottom: 10px; }
+  .sticky {
+    color: #323232; }
+    .sticky .nav-burger div {
+      border-color: #aa5045; } }
 
 .overlay {
+  font-family: 'Oswald', sans-serif;
+  color: #323232;
   opacity: 1;
   background-color: #82b37e;
   position: fixed;
