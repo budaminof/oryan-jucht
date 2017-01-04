@@ -11,7 +11,20 @@ class Nav extends Component {
     }
   }
 
-  onLanguageChange(lang){
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    if ($(this).scrollTop() > 1) $('nav').addClass("sticky");
+    else $('nav').removeClass("sticky");
+  }
+
+  onLanguageChange(lang) {
     let currentLanguage = lang.nativeEvent.target.innerHTML;
     this.props.changeLanguage(currentLanguage);
     return

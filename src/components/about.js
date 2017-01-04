@@ -8,10 +8,10 @@ class About extends Component {
     const { t } = this.props;
 
     return (
-      <div className={ (language == 'en') ? 'text-left' : 'text-right' }>
+      <article className={ (language == 'en') ? 'text-left container-fluid' : 'text-right container-fluid' }>
         <h2>{t('header')}</h2>
         <p>{t('text')}</p>
-      </div>
+      </article>
     )
   }
 }

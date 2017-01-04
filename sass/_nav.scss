@@ -4,11 +4,17 @@
   font-family: 'Oswald', sans-serif;
   color: $black;
   background-color: $background !important;
+  border-color: white !important;
   height: 100px;
   padding-top: 10px;
   padding-left: 30px;
   margin-bottom: 0px !important;
   border-radius: 0px !important;
+  position: fixed !important;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease;
+
 }
 
 .full-nav {
@@ -32,9 +38,21 @@
   display: hidden;
 }
 
+// playing around with ticky nav
+.sticky {
+  opacity: 0.8;
+  color: rgb(20, 107, 15);
+  transition: all 0.4s ease;
+}
+
+// change nav to burger time
 @media(max-width: 500px) {
   .full-nav {
     display: none;
+  }
+
+  .navbar, .navbar-default  {
+    height: 70px;
   }
 
   .nav-burger {
@@ -42,7 +60,7 @@
     width: 50px;
     position: absolute;
     right: 15px;
-    bottom: 25px;
+    bottom: 15px;
     transition: all 1s ease;
 
     div {
@@ -53,7 +71,6 @@
   }
 
 }
-
 
 .overlay {
   opacity: 1;
@@ -97,7 +114,7 @@
   width: 50px;
   position: absolute;
   right: 16px;
-  top: 37px;
+  top: 18px;
   transition: all 1s ease;
 
   div {
@@ -105,5 +122,4 @@
     width: 40px;
     padding-bottom: 10px;
   }
-
 }

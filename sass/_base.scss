@@ -9,3 +9,15 @@ a, a:focus, a:hover, a:active {
   text-decoration: none !important;
   color: $black !important;
 }
+
+article {
+  padding-top: 100px;
+}
+
+@media(max-width: 500px) {
+
+  article {
+    padding-top: 70px;
+  }
+
+}

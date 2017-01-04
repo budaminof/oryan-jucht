@@ -7,7 +7,6 @@ const Me = () => {
         <img src="./style/oryan6.jpg"></img>
         <img src="./style/oryan2.jpg"></img>
         <img src="./style/oryan4.jpg"></img>
-        <img src="./style/oryan3.jpg"></img>
       </article>
     );
 }
