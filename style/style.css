@@ -17,7 +17,7 @@ article {
   font-family: 'Oswald', sans-serif;
   color: #323232;
   background-color: white !important;
-  border-color: white !important;
+  border-top: #c9c9c9 !important;
   height: 100px;
   padding-top: 10px;
   padding-left: 30px;
@@ -27,6 +27,9 @@ article {
   width: 100%;
   z-index: 1000;
   transition: all 0.4s ease; }
+  .navbar img, .navbar-default img {
+    transition: all 0.4s ease;
+    height: 70px; }
 
 .full-nav {
   transition: all 0.4s ease;
@@ -46,11 +49,17 @@ article {
 .nav-burger {
   display: hidden; }
 
+.active.bud {
+  text-decoration: underline !important; }
+
 .sticky {
   opacity: 0.8;
   color: #aa5045;
   transition: all 0.4s ease;
   height: 50px; }
+  .sticky img {
+    transition: all 0.4s ease;
+    height: 35px; }
   .sticky .full-nav {
     transition: all 0.4s ease;
     bottom: 5px; }
@@ -62,6 +71,9 @@ article {
     display: none; }
   .navbar, .navbar-default {
     height: 70px; }
+    .navbar img, .navbar-default img {
+      transition: all 0.4s ease;
+      height: 50px; }
   .nav-burger {
     display: block;
     width: 50px;
@@ -70,13 +82,16 @@ article {
     bottom: 15px;
     transition: all 0.4s ease; }
     .nav-burger div {
-      border-top: 2px #323232 solid;
+      border-top: 1px #323232 solid;
       width: 40px;
       padding-bottom: 10px; }
   .sticky {
     color: #323232;
     transition: all 0.4s ease;
     height: 50px; }
+    .sticky img {
+      transition: all 0.4s ease;
+      height: 30px; }
     .sticky .nav-burger {
       bottom: 4px; }
       .sticky .nav-burger div {
@@ -117,9 +132,11 @@ article {
 .close-nav {
   width: 50px;
   position: absolute;
-  right: 16px;
-  top: 9px;
+  right: 10px;
+  top: 20px;
   transition: all 0.4s ease; }
+  .close-nav span {
+    height: 100px; }
   .close-nav div {
     border-top: 2px #323232 solid;
     width: 40px;

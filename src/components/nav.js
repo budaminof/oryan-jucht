@@ -20,9 +20,7 @@ class Nav extends Component {
   }
 
   handleScroll() {
-    console.log(this.window);
-    if ($(this).scrollTop() > 200) $('nav').addClass("sticky");
-    else $('nav').removeClass("sticky");
+    return ($(this).scrollTop() > 200) ? $('nav').addClass("sticky") : $('nav').removeClass("sticky");
   }
 
   onLanguageChange(lang) {
@@ -39,10 +37,12 @@ class Nav extends Component {
 
   render() {
     const { t } = this.props;
+    let { location } = this.props;
 
     return (
       <div>
         <nav className="navbar navbar-default">
+          <Link to="/"><img src="./style/Oryan061.jpg"></img></Link>
           <div className="full-nav">
             <p onClick={ event => this.onLanguageChange(event) } >
               HE
@@ -50,10 +50,10 @@ class Nav extends Component {
             <p onClick={ event => this.onLanguageChange(event) } >
               EN
             </p>
-            <h4><Link to="/about">
+            <h4><Link to="/about" activeClassName='active bud'>
               { t('about') }
             </Link></h4>
-            <h4><Link to="/classes">
+            <h4><Link to="/classes" activeClassName='active bud'>
               { t('classes') }
             </Link></h4>
           </div>
@@ -66,9 +66,7 @@ class Nav extends Component {
       </nav>
       <div className={ this.state.showNav ? 'overlay' : 'hidden' } >
         <div className="close-nav" onClick={ event => this.navCollapse(event) }>
-          <div></div>
-          <div></div>
-          <div></div>
+          <span className="glyphicon glyphicon-remove"></span>
         </div>
 
         <div className="nav-links">

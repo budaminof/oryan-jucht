@@ -4,7 +4,7 @@
   font-family: 'Oswald', sans-serif;
   color: $black;
   background-color: $background !important;
-  border-color: white !important;
+  border-top: $navBorder !important;
   height: 100px;
   padding-top: 10px;
   padding-left: 30px;
@@ -15,6 +15,10 @@
   z-index: 1000;
   transition: all 0.4s ease;
 
+  img {
+    transition: all 0.4s ease;
+    height: 70px;
+  }
 }
 
 .full-nav {
@@ -39,12 +43,20 @@
   display: hidden;
 }
 
+.active.bud {
+  text-decoration: underline !important;
+}
+
 // playing around with ticky nav
 .sticky {
   opacity: 0.8;
   color: $peacock;
   transition: all 0.4s ease;
   height: 50px;
+  img {
+    transition: all 0.4s ease;
+    height: 35px;
+  }
 
     .full-nav {
       transition: all 0.4s ease;
@@ -62,6 +74,11 @@
 
   .navbar, .navbar-default  {
     height: 70px;
+
+    img {
+      transition: all 0.4s ease;
+      height: 50px;
+    }
   }
 
   .nav-burger {
@@ -73,7 +90,7 @@
     transition: all 0.4s ease;
 
     div {
-      border-top: 2px $black solid;
+      border-top: 1px $black solid;
       width: 40px;
       padding-bottom: 10px;
     }
@@ -83,6 +100,10 @@
     color: $black;
     transition: all 0.4s ease;
     height: 50px;
+    img {
+      transition: all 0.4s ease;
+      height: 30px;
+    }
 
     .nav-burger {
       bottom: 4px;
@@ -137,9 +158,12 @@
 .close-nav {
   width: 50px;
   position: absolute;
-  right: 16px;
-  top: 9px;
+  right: 10px;
+  top: 20px;
   transition: all 0.4s ease;
+  span {
+    height: 100px;
+  }
 
   div {
     border-top: 2px $black solid;

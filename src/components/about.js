@@ -6,7 +6,7 @@ class About extends Component {
   render () {
     let language = this.props.language.locale;
     const { t } = this.props;
-
+    
     return (
       <article className={ (language == 'en') ? 'text-left container-fluid' : 'text-right container-fluid' }>
         <h2>{t('header')}</h2>

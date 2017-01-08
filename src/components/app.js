@@ -17,9 +17,7 @@ export default class App extends Component {
   }
 
   currentLanguage(lang) {
-    if (lang == 'EN') this.setState({ LANG: EN});
-    else this.setState({ LANG: HE });
-    return
+    return (lang == 'EN') ? this.setState({ LANG: EN }) : this.setState({ LANG: HE });
   }
 
   render() {
@@ -28,7 +26,7 @@ export default class App extends Component {
     return (
       <TranslatorProvider translations={ this.state.LANG }>
         <main>
-          <Nav changeLanguage={ this.currentLanguage.bind(this) }/>
+          <Nav changeLanguage={ this.currentLanguage.bind(this) } location={ this.props.location.pathname } />
             <div>
               { clonedElement }
             </div>
